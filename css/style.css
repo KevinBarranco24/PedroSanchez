@@ -134,9 +134,7 @@ h6,
     color: var(--primary);
 }
 
-.navbar.fixed-top {
-    transition: .5s;
-}
+
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
@@ -459,15 +457,15 @@ h6,
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    height: 300px;
+    height: 430px;
 }
 
 .Fondo02 {
     background-image: url('../img/parallax02.jpg');
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     height: 300px;
 }
 
@@ -477,7 +475,7 @@ h6,
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 430px;
 }
 
 .Fondo04 {
@@ -486,7 +484,7 @@ h6,
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 430px;
 }
 
 #modalcompartir {
@@ -641,13 +639,13 @@ h6,
         width: 600px;
     }
     to {
-        width: 200px;
+        width: 10px;
     }
 }
 
 @keyframes crecer {
     from {
-        width: 200px;
+        width: 10px;
     }
     to {
         width: 600px;
