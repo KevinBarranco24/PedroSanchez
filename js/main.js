@@ -162,14 +162,6 @@
         maximizar()
     }, 90000);//90000
 
-    var map = new GMaps({
-        el: '#map',
-        lat: 20.672828690525364,
-        lng: -103.39748986065388,
-        draggable: false,
-        scrollwheel:false,
-        zoom: 15
-    });
 
     var sound = new buzz.sound("/sound/music.mp3", {
         formats: [ "ogg", "mp3", "aac" ]
@@ -182,11 +174,39 @@
             var timer = buzz.toTimer(this.getTime());
             document.getElementById("timer").innerHTML = timer;
         });
+    
+         
+
+    
 })(jQuery);
 
 function gotoInicio() {
     $("html, body").animate({scrollTop: 0}, 1000, 'easeInOutExpo');
 }
+
+/*function displayMap() {
+    const mapOptions = {
+        center: { lat: -103.2829246, lng: 20.6850931 },
+        zoom: 14
+    };
+    const mapDiv = document.getElementById('map');
+    const map = new google.maps.Map(mapDiv, mapOptions);
+    return map;
+}*/
+
+var cont2 = true; 
+ 
+ function sil(){
+    if(cont2 == true){
+        aud1.muted = true;
+        cont2 = false;
+    }else{
+        aud1.muted = false;
+        cont2 = true;
+    }
+    
+ }
+
 
 function goToProyecto() {
     $("html, body").animate({scrollTop: $("#divProyecto").offset().top}, 1000, 'easeInOutExpo');
@@ -287,12 +307,56 @@ function guardar() {
 
 }
 
+var cont = 0;
+
+let observer3 = new IntersectionObserver((entries, observer3) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            if(cont === 0){
+                aud1.muted = false;
+                aud1.play();
+            }else{
+                aud1.muted = false;
+                vid2.muted = true;
+                vid3.muted = true;
+            }
+                
+        }
+    })
+});
+
+observer3.observe(son);
+
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            aud1.muted = true;
+            vid2.muted = false;
+            vid2.play();
+            vid3.muted = true;
+            cont++;
+            
+        }
+    })
+});
+
+observer.observe(vid2);
+
+let observer2 = new IntersectionObserver((entries, observer2) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            vid2.muted = true;
+            vid3.muted = false;
+            vid3.play();
+
+        }
+    })
+});
+
+observer2.observe(vid3);
 
 
-function NoMuted() {
-    var video = document.getElementById("video");
-    video.muted = false;
-}
+
 
 function ValidarForm() {
     function ValidarForm() {

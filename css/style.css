@@ -54,6 +54,12 @@ h6,
     top: 145px;
     z-index: 999;
 }
+.sonido {
+    position: fixed;
+    right: 10px;
+    top: 300px;
+    z-index: 999;
+}
 
 .descargar {
     position: fixed;
@@ -457,7 +463,7 @@ h6,
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    height: 430px;
+    height: 550px;
 }
 
 .Fondo02 {
@@ -470,12 +476,12 @@ h6,
 }
 
 .Fondo03 {
-    background-image: url('../img/parallax03.jpg');
+    background-image: url('../img/parallax03.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 430px;
+    height: 550px;
 }
 
 .Fondo04 {
@@ -639,13 +645,13 @@ h6,
         width: 600px;
     }
     to {
-        width: 10px;
+        width: 60px;
     }
 }
 
 @keyframes crecer {
     from {
-        width: 10px;
+        width: 60px;
     }
     to {
         width: 600px;
